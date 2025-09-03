@@ -2,21 +2,13 @@ from aiogram import Router, F
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, FSInputFile
 from config import user
+from FSM.main import User
 
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
 import keyboards.menu_kb as kb
 from keyboards.confirmation import confirm
-
-class User(StatesGroup):
-    id = State()
-    name = State()
-    balance = State()
-    is_true = State()
-    choice = State()
-    choice2 = State()
-    is_false = State()
 
 
 start_router = Router()
