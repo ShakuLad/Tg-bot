@@ -1,9 +1,9 @@
 class User():
 
     def __init__(self):
-        self.id = None
-        self.name = None
-        self.balance = 1000
+        self.__id = None
+        self.__name = None
+        self.__balance = 0
         self.product1 = 100
         self.product2 = 50
         self.product3 = 300
@@ -11,25 +11,25 @@ class User():
         self.orders = []
 
     def add_id(self, id:int):
-        self.id = id
+        self.__id = id
         return 'Мы добавили id'
 
     def get_id(self):
-        return self.id
+        return self.__id
 
     def add_name(self, name:str):
-        self.name = name
+        self.__name = name
         return 'Мы добавили имя'
 
     def get_name(self):
-        return self.name
+        return self.__name
     
     def add_balance(self, balance:int):
-        self.balance += balance
+        self.__balance += balance
         return 'Мы добавили баланс'
 
     def get_balance(self):
-        return self.balance
+        return self.__balance
     
     def add_product1(self, product1:int):
         self.product1 = product1
@@ -67,14 +67,14 @@ class User():
         return self.orders
     
     def minus_balance(self, item:int):
-        self.balance -= item
+        self.__balance -= item
         return "Мы отняли ваш баланс"
     
     def about(self):
         return f"""
-Имя: {self.name},
-Баланс: {self.balance},
-Id: {self.id},
+Имя: {self.__name},
+Баланс: {self.__balance},
+Id: {self.__id},
 Ваши покупки: {self.orders};
 """
 
